@@ -36,11 +36,15 @@ if what == "1":
             r = requests.post(url, data=data, headers=header)
             if r.status_code == 200:
                 x = x + 1
-                y = y + 1 
-                print(f"{Fore.LIGHTGREEN_EX}[+] {Fore.RESET} MESSAGE SENT     {x} out of {y} were sent")
+                y = y + 1
+                mathif = x/y*100
+                rounded = round(mathif)
+                print(f"{Fore.LIGHTGREEN_EX}[+] {Fore.RESET} MESSAGE SENT      {rounded} Percent of the messages were sent")
             else:
-                y = y + 1 
-                print(f"{Fore.LIGHTRED_EX}[+] {Fore.RESET} MESSAGE FAILED   {x} out of {y} were sent")
+                y = y + 1
+                mathelse = x/y*100
+                rounded = round(mathelse)
+                print(f"{Fore.LIGHTRED_EX}[+] {Fore.RESET} MESSAGE FAILED     {rounded} Percent of the messages were sent")
                 
 
     def thread():
